@@ -19,6 +19,7 @@ function myMap(arr,callback){
 
 }
 
+
 const map = myMap(arr, x => x * 2)
 console.log("Map is", map) //output (4) [4, 14, 180, 32]
 
@@ -32,34 +33,66 @@ function myFilter(arr, callback){
         return newarr
 
 }
+
 const filter = myFilter(arr, x => x > 3);
 console.log(filter);// output is (4) [false, true, true, true]
 
 //some function
 
 function mySome(arr, callback){
-    for(let i=0; i<arr.length; i++){
-
-        callback(arr[i]);
-        if (callback = true){
-            return true
+    let newarr = [];
+        for(let i = 0; i < arr.length; i++){
+            
+            if(newarr[i] = callback(arr[i])){
+                return true;
+            }
         }
-        else{
-            return false
-        }
-
-
-
-    }
-
+    return false
 
 }
 
-const some= mySome(arr, x => x < 1 );
-console.log(some) //output True
+
+const someResult = mySome(arr, x => x < 1);
+console.log(someResult);//output false
 
 
 //Every Function
+function myEvery(arr, callback){
+    let newarr = [];
+        for(let i = 0; i < arr.length; i++){
+            newarr[i] = callback(arr[i]);
+            if(newarr[i] = callback(arr[i])){
+                return true;
+            }
+            return false;
 
-//function myEvery
+        }
+}
+
+    const everyResult = myEvery(arr, (x) => x >= 2);
+    console.log(everyResult);//output true
+
+
+
+//reduce()
+function thisCallBack(element){  
+    return element;
+ }
+ 
+ function myReduce(arr, callback){
+    let newarr = [];
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+        newarr[i] = callback(arr[i]);
+        sum += newarr[i];        
+       
+        }
+        return sum;
+ }
+    console.log(myReduce(arr,thisCallBack))
+
+
+    
+
+
 
