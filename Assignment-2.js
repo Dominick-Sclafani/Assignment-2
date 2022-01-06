@@ -92,7 +92,58 @@ function thisCallBack(element){
     console.log(myReduce(arr,thisCallBack))
 
 
-    
+
+//includes
+
+function myIncludes(arr, target){
+    for(var i = 0; i < arr.length; i++) {
+      if (arr[i] === target) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  console.log(myIncludes(arr, 2));//true
+ 
+//indexOf()
+  function myIndexOf(arr, target) {
+    for(var i = 0; i < arr.length; i++) {
+      if (arr[i] === target) {
+        return i;
+      }
+    }
+    return -1;
+  }
+  
+  console.log(myIndexOf(arr, 4));  
+  
+  
+  //push
+
+  function myPush(arr, elementToAdd) {
+    var length = arr.length;
+    arr[length] = elementToAdd;
+    length++;
+    arr.length = length;
+    return length;
+  }
+  
+  console.log(myPush(arr, 6))
+
+
+  //last indexOf
+
+  function myLastIndexOf(arr, target) {
+    for(var i = arr.length - 1; i >= 0; i--) {
+      if (arr[i] === target) {
+        return i;
+      }
+    }
+    return -1;
+  }
+  
+  console.log(myLastIndexOf(arr, 2));//output 2 
 
 
 
